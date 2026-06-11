@@ -1,0 +1,28 @@
+BMSIT Department Information:
+
+BMS Institute of Technology (BMSIT) is a premier engineering college located in Bangalore, Karnataka, India.
+
+Departments:
+- Computer Science and Engineering
+- Information Science and Engineering
+- Electronics and Communication Engineering
+- Mechanical Engineering
+- Civil Engineering
+- Electrical and Electronics Engineering
+
+Facilities:
+- Modern classrooms with smart boards
+- Well-equipped laboratories
+- Library with extensive collection
+- Sports complex
+- Hostel accommodation
+- Cafeteria
+
+Contact Information:
+Address: P.O. Box No.: 6443, Bull Temple Road, Bangalore - 560 019
+Phone: +91-80-26622130-35
+Email: info@bmsit.in
+Website: www.bmsit.in
+
+Established: 2002
+Affiliated to: Visvesvaraya Technological University (VTU)

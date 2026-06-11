@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "id": "S001",
+      "name": "Alice Johnson",
+      "attendance": {
+        "Mathematics": 85,
+        "Physics": 90,
+        "Chemistry": 78,
+        "Computer Science": 92,
+        "English": 88,
+        "Biology": 80
+      }
+    },
+    {
+      "id": "S002",
+      "name": "Bob Smith",
+      "attendance": {
+        "Mathematics": 75,
+        "Physics": 82,
+        "Chemistry": 85,
+        "Computer Science": 88,
+        "English": 90,
+        "Biology": 76
+      }
+    },
+    {
+      "id": "S003",
+      "name": "Charlie Brown",
+      "attendance": {
+        "Mathematics": 92,
+        "Physics": 85,
+        "Chemistry": 90,
+        "Computer Science": 95,
+        "English": 87,
+        "Biology": 89
+      }
+    }
+  ]
+}

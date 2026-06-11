@@ -1,0 +1,16 @@
+Day,Time,Subject,Faculty
+Monday,9:00-10:00,Mathematics,Dr. Smith
+Monday,10:00-11:00,Physics,Dr. Johnson
+Monday,11:00-12:00,Chemistry,Dr. Brown
+Tuesday,9:00-10:00,Computer Science,Dr. Davis
+Tuesday,10:00-11:00,English,Ms. Wilson
+Tuesday,11:00-12:00,Biology,Dr. Miller
+Wednesday,9:00-10:00,Mathematics,Dr. Smith
+Wednesday,10:00-11:00,History,Mr. Garcia
+Wednesday,11:00-12:00,Geography,Ms. Lee
+Thursday,9:00-10:00,Physics,Dr. Johnson
+Thursday,10:00-11:00,Chemistry,Dr. Brown
+Thursday,11:00-12:00,Computer Science,Dr. Davis
+Friday,9:00-10:00,English,Ms. Wilson
+Friday,10:00-11:00,Biology,Dr. Miller
+Friday,11:00-12:00,Sports,Mr. Taylor
