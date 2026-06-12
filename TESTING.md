@@ -318,7 +318,7 @@ Expected Response:
 {
   "success": true,
   "exams": [
-    {"subject": "Mathematics", "date": "2024-05-15", ...}
+    {"subject": "Mathematics", "date": "2026-05-15", ...}
   ]
 }
 ```

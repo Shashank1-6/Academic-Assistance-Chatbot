@@ -208,10 +208,10 @@ app.get('/api/get-timetable', (req, res) => {
 app.get('/api/get-exams', (req, res) => {
   try {
     const exams = [
-      { subject: 'Mathematics', date: '2024-05-15', time: '10:00 AM', room: 'Room 101' },
-      { subject: 'Physics', date: '2024-05-17', time: '10:00 AM', room: 'Room 102' },
-      { subject: 'Chemistry', date: '2024-05-20', time: '10:00 AM', room: 'Room 103' },
-      { subject: 'Computer Science', date: '2024-05-22', time: '10:00 AM', room: 'Room 104' }
+      { subject: 'Mathematics', date: '2026-05-15', time: '10:00 AM', room: 'Room 101' },
+      { subject: 'Physics', date: '2026-05-17', time: '10:00 AM', room: 'Room 102' },
+      { subject: 'Chemistry', date: '2026-05-20', time: '10:00 AM', room: 'Room 103' },
+      { subject: 'Computer Science', date: '2026-05-22', time: '10:00 AM', room: 'Room 104' }
     ];
 
     res.json({
@@ -294,11 +294,11 @@ app.get('/api/get-faculty', (req, res) => {
 app.get('/api/get-notices', (req, res) => {
   try {
     const notices = [
-      'Semester exams will start from May 15, 2024. All students must check their exam schedules.',
-      'Library will be closed for maintenance on May 10, 2024.',
-      'Sports day is scheduled for May 25, 2024. All students are encouraged to participate.',
+      'Semester exams will start from May 15, 2026. All students must check their exam schedules.',
+      'Library will be closed for maintenance on May 10, 2026.',
+      'Sports day is scheduled for May 25, 2026. All students are encouraged to participate.',
       'New computer lab is now open in Block C, Room 201.',
-      'Parent-teacher meeting will be held on May 30, 2024 at 2:00 PM.',
+      'Parent-teacher meeting will be held on May 30, 2026 at 2:00 PM.',
       'WiFi password has been changed. Contact IT department for new password.'
     ];
 
