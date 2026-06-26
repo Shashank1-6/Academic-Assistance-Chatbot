@@ -8,6 +8,11 @@ function SettingsPage({ user, debugMode, setDebugMode }) {
   const [analytics, setAnalytics] = useState(null);
   const [config, setConfig] = useState({});
   const [embeddingModel, setEmbeddingModel] = useState('all-MiniLM-L6-v2');
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [uploading, setUploading] = useState(false);
+  const [rebuilding, setRebuilding] = useState(false);
+  const [uploadMessage, setUploadMessage] = useState('');
+  const [rebuildMessage, setRebuildMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

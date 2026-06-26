@@ -196,67 +196,6 @@ app.post('/api/chat-history/clear', (req, res) => {
   }
 });
 
-/**
- * Upload dataset files (Teachers only)
- */
-app.post('/api/upload-dataset', upload.array('files'), (req, res) => {
-  try {
-    const { email } = req.body;
-    if (!email) {
-      return res.status(400).json({ error: 'Email required' });
-    }
-
-    const user = USERS[email];
-    if (!user || user.role !== 'teacher') {
-      return res.status(403).json({ error: 'Only teachers can upload dataset files' });
-    }
-
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: 'No files uploaded' });
-    }
-
-    const savedFiles = req.files.map((file) => file.originalname);
-
-    return res.json({
-      success: true,
-      files: savedFiles,
-      message: 'Files uploaded to dataset folder.'
-    });
-  } catch (error) {
-    console.error('Upload error:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-/**
- * Rebuild knowledge base from dataset folder (Teachers only)
- */
-app.post('/api/rebuild-knowledge-base', async (req, res) => {
-  try {
-    const { email } = req.body;
-    if (!email) {
-      return res.status(400).json({ error: 'Email required' });
-    }
-
-    const user = USERS[email];
-    if (!user || user.role !== 'teacher') {
-      return res.status(403).json({ error: 'Only teachers can rebuild the knowledge base' });
-    }
-
-    const pythonResponse = await axios.post(`${PYTHON_RAG_URL}/api/rebuild`, { email });
-
-    if (pythonResponse.status === 200) {
-      return res.json(pythonResponse.data);
-    }
-
-    return res.status(pythonResponse.status).json(pythonResponse.data);
-  } catch (error) {
-    console.error('Rebuild error:', error);
-    const message = error.response?.data?.error || error.message || 'Rebuild failed';
-    res.status(500).json({ error: message });
-  }
-});
-
 // ==================== DATA RETRIEVAL ENDPOINTS ====================
 
 /**

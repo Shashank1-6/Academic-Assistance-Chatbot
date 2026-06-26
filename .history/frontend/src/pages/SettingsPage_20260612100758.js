@@ -8,6 +8,11 @@ function SettingsPage({ user, debugMode, setDebugMode }) {
   const [analytics, setAnalytics] = useState(null);
   const [config, setConfig] = useState({});
   const [embeddingModel, setEmbeddingModel] = useState('all-MiniLM-L6-v2');
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [uploading, setUploading] = useState(false);
+  const [rebuilding, setRebuilding] = useState(false);
+  const [uploadMessage, setUploadMessage] = useState('');
+  const [rebuildMessage, setRebuildMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -26,6 +31,59 @@ function SettingsPage({ user, debugMode, setDebugMode }) {
       console.error('Error loading settings:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleFileChange = (e) => {
+    setSelectedFiles(Array.from(e.target.files));
+    setUploadMessage('');
+    setRebuildMessage('');
+  };
+
+  const handleUploadDataset = async () => {
+    if (!selectedFiles.length) {
+      setUploadMessage('Please select at least one CSV, JSON, or TXT file.');
+      return;
+    }
+
+    try {
+      setUploading(true);
+      setUploadMessage('');
+      const formData = new FormData();
+      formData.append('email', user.email);
+      selectedFiles.forEach((file) => {
+        formData.append('files', file);
+      });
+
+      const response = await axios.post('http://localhost:5000/api/upload-dataset', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+
+      setUploadMessage(response.data.message || 'Dataset files uploaded successfully.');
+      setSelectedFiles([]);
+    } catch (error) {
+      console.error('Dataset upload failed:', error);
+      setUploadMessage(error.response?.data?.error || 'Upload failed.');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleRebuildKnowledgeBase = async () => {
+    try {
+      setRebuilding(true);
+      setRebuildMessage('');
+
+      const response = await axios.post('http://localhost:5000/api/rebuild-knowledge-base', {
+        email: user.email
+      });
+
+      setRebuildMessage(response.data.message || 'Knowledge base rebuilt successfully.');
+    } catch (error) {
+      console.error('Rebuild failed:', error);
+      setRebuildMessage(error.response?.data?.error || 'Rebuild failed.');
+    } finally {
+      setRebuilding(false);
     }
   };
 
